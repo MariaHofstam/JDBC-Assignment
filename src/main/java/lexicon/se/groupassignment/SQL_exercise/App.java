@@ -24,31 +24,30 @@ public class App
 //    	List<City> countryCode = dao.findByCode("GBR");				//Find city by CountryCode
 //    	System.out.println(countryCode);
 //    	
-//    	List<City> name = dao.findByName("Stockholm");					//Find city by Name
+//    	List<City> name = dao.findByName("Växjö");					//Find city by Name
 //    	System.out.println(name);
-//    	
+    	
     	
     	
 //    	List<City> findAll = dao.findAll();							//Find All cities
 //    	System.out.println(findAll);
 
-    	City Växjö = new City(1,"Växjö", "SWE", "Kronoberg", 66275);
-    	dao.add(Växjö);
-    	List<City> name = dao.findByName("Växjö");					
-    	System.out.println(name);
+//    	City Växjö = new City(1,"Växjö", "SWE", "Kronoberg", 66275);
+//    	dao.add(Växjö);
+//    	List<City> name = dao.findByName("Växjö");					
+//    	System.out.println(name);
 
-//    	City karlshamn = new City("Karlshamn", "SWE", "Blekinge", 20274);	
+//    	City karlshamn = new City(2, "Karlshamn", "SWE", "Blekinge", 20274);	
 //     	dao.add(karlshamn);											//Add city to the DataBase
-//    	City addId = dao.findById(4081);								
-//    	System.out.println(addId);
-//
-//    	//Update
-//    	karlshamn.setName("Karlshamn2");
-//    	System.out.println(karlshamn);
-//    	
-//    	dao.update(karlshamn);											//Update a city in the DataBase
-//    	City addId = dao.findById(4081);								
-//    	System.out.println(addId);
+//     	List<City> name2 = dao.findByName("Karlshamn");							
+//    	System.out.println(name2);
+
+//    	karlshamn.setPopulation(20375);
+    	City updateId = dao.findById(4083);
+    	System.out.println(updateId);
+    	updateId.setPopulation(42963);
+    	dao.update(updateId);											//Update a city in the DataBase		
+    	System.out.println(updateId);
     	
     	
     	

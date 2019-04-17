@@ -181,8 +181,9 @@ public class CityDaoImpl implements CityDao {
 		return statement;
 	}
 	
+
 	private PreparedStatement createPreparedStatementAdd(Connection conn, City city)throws SQLException {
-		PreparedStatement statement = conn.prepareStatement("INSERT INTO city VALUES(?,?,?,?)");
+		PreparedStatement statement = conn.prepareStatement("INSERT INTO city (name, countryCode, district, population)VALUES(?,?,?,?)");
 		statement.setString(1, city.getName());
 		statement.setString(2, city.getCountryCode());
 		statement.setString(3, city.getDistrict());
@@ -190,6 +191,7 @@ public class CityDaoImpl implements CityDao {
 		return statement;
 	}
 	
+
 	private PreparedStatement createPreparedStatementUpdate(Connection conn, City city)throws SQLException {
 		PreparedStatement statement = conn.prepareStatement("UPDATE city SET NAME = ?, COUNTRYCODE = ?, DISTRICT = ?, POPULATION = ? WHERE ID = ? ");
 		statement.setString(1, city.getName());
