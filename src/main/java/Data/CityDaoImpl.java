@@ -130,7 +130,7 @@ public class CityDaoImpl implements CityDao {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return city;
 	}
 	
 // ********** Update a city in the dataBase *************
@@ -145,22 +145,25 @@ public class CityDaoImpl implements CityDao {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return city;
 	}
 
 // ********** Delete a city from the dataBase *************
 	@Override
 	public int delete(City city) {
 		
+		int rowsDeleted = -1;
+		
 		try (Connection conn = DataBase.getConnection();
 				PreparedStatement statement = createPreparedStatementDelete(conn, city);){
 			
-			 statement.executeUpdate();
+			rowsDeleted=statement.executeUpdate();
 			 
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		
+		return rowsDeleted;
 	}
 	
 	private PreparedStatement createPreparedStatement(Connection conn, int number) throws SQLException {
